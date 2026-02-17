@@ -216,6 +216,29 @@ Page for displaying remaining information of the variable.
 
 <img src=".images/variable-page.png" width="600" />
 
+## Deployment
+
+I decided to use vercel, created a github action for automatic deployments.\
+\
+Created GitHub repository secrets:
+
+<img src=".images/github-secrets.png" width="600" />
+
+Then created a deploy workflow:
+- Using ubuntu-latest with vercel environment variables
+- Pulling production environment variables from the vercel server
+  ```bash
+  $ npm install --global vercel@latest
+  $ vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+  ```
+- Building the application and deploying the output of the build command to the production server
+  ```bash
+  $ vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+  $ vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+  ```
+
+
+
 
 
 
