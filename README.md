@@ -206,7 +206,19 @@ Here user can enter a VIN code value, which will be validated against different 
 
 ### Variables page
 
-Here I display all the variables taken from API without description field. User can click on any row to see more details.
+Here I display all the variables taken from API without description field. User can click on any row to see more details. I mentioned in the comments that I'm passing the variable record through the navigation. In the real-world scenario it is better to use ID and not to do unnecessary reads.
+
+<img src=".images/variables-page.png" width="600" />
+
+### Variable page
+
+Page for displaying remaining information of the variable.
+
+<img src=".images/variable-page.png" width="600" />
+
+
+
+
 
 
 
