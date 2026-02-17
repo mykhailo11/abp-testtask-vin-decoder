@@ -2,7 +2,7 @@
 
 ## Server
 
-You can check the working application [here](http://localhost:5173) (http://localhost:5173)
+You can check the working application [here](https://abp-testtask-vin-decoder.vercel.app) (https://abp-testtask-vin-decoder.vercel.app)
 
 ## Local installation
 
