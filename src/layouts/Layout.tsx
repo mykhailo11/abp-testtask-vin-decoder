@@ -7,13 +7,15 @@ import styles from "@/layouts/Layout.module.scss";
 
 export default function Layout(): ReactNode {
     const { t }: Translator = useTranslation("translation");
-    const navigationItems: Array<ReactNode> = navigation.map(
-        (item: NavItem, index: number): ReactNode => (
-            <NavLink key={index} to={item.path}>
-                {t(`navigation.${item.key}`)}
-            </NavLink>
-        ),
-    );
+    const navigationItems: Array<ReactNode> = Object.values(navigation)
+        .filter(({ skip }: NavItem) => !skip)
+        .map(
+            (item: NavItem, index: number): ReactNode => (
+                <NavLink key={index} to={item.path}>
+                    {t(`navigation.${item.key}`)}
+                </NavLink>
+            ),
+        );
     return (
         <div className="flex-col min-h-screen">
             <nav className={`${styles["header"]} flex gap-3 p-4`}>

@@ -8,7 +8,7 @@
   font-variation-settings: "wdth" 100;
 
   color-scheme: light dark;
-  
+
   * {
 
     &:any-link {
@@ -25,6 +25,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,7 +55,9 @@
   display: flex;
 }
 
-.flex, .flex-col, .layout {
+.flex,
+.flex-col,
+.layout {
   @include flex;
 
   &.center {
@@ -127,6 +130,10 @@
     padding: #{$n * $padding-multiplier}px;
   }
 
+  .p-b-#{$n} {
+    padding-bottom: #{$n * $padding-multiplier}px;
+  }
+
   .p-x-#{$n} {
     padding-left: #{$n * $padding-multiplier}px;
     padding-right: #{$n * $padding-multiplier}px;
@@ -171,4 +178,3 @@
 .uppercase {
   text-transform: uppercase;
 }
-

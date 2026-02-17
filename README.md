@@ -27,6 +27,7 @@ $ npm run dev
 - The same is applicable for component libraries which ensures consistent design accross the application
 - Images will be stored as static resources, but for better flexibility it is better to create CDN
 - Also it is better to cover the functionality with tests
+- For better performance and user experience I would add pagination on VIN code info section and variables page
 
 ## Application details
 
@@ -200,6 +201,12 @@ Created a responsive home layout using CSS grid system:
 ```
 
 Here user can enter a VIN code value, which will be validated against different rules (length, characters etc). After user clicks search, a new history record is created (it can be reused) and information for the provided value is displayed. If API call receives errors, they are formatted and displayed, othervise key-value pairs are presented to the user (except the empty ones).
+
+<img src=".images/home-page.png" width="600" />
+
+### Variables page
+
+Here I display all the variables taken from API without description field. User can click on any row to see more details.
 
 
 

@@ -5,25 +5,28 @@ import properties from "@/config/properties.json";
 import { format } from "@/util/Util";
 import Loading from "@/components/utils/Loading";
 import { vinCodeService } from "@/service/VinCodeService";
-import VinCodeInfoEntries from "@/layouts/home/vin-code-info/VinCodeInfoEntries";
+import RecordSection from "@/components/data/record/RecordSection";
 
 type Props = {
-    className?: string
-    vinCode: string
+    className?: string;
+    vinCode: string;
 };
 
 type VinCodeData = Record<string, string>;
 
 export default function VinCodeInfo({ className, vinCode }: Props): ReactNode {
-    const vinCodeInfo: Data<VinCodeData> = useDataFetch<VinCodeData>({
-        url: properties.vinCodeApi.baseUrl + format(properties.vinCodeApi.endpoints.decodeVin, vinCode),
-        mapping: (data) => vinCodeService.map(data)
-    }, [vinCode]);
+    const vinCodeInfo: Data<VinCodeData> = useDataFetch<VinCodeData>(
+        {
+            url: properties.vinCodeApi.baseUrl + format(properties.vinCodeApi.endpoints.decodeVin, vinCode),
+            mapping: (data) => vinCodeService.mapVinCode(data),
+        },
+        [vinCode],
+    );
 
     return (
         <Card className={className}>
-            { vinCodeInfo.loading && <Loading className="flex center h-full"/> }
-            { vinCodeInfo.ok ? <VinCodeInfoEntries data={vinCodeInfo}/> : <div className="error tiny">{vinCodeInfo.message}</div> }
+            {vinCodeInfo.loading && <Loading className="flex center h-full" />}
+            {vinCodeInfo.ok ? <RecordSection data={vinCodeInfo.data} /> : <div className="error tiny">{vinCodeInfo.message}</div>}
         </Card>
     );
 }
