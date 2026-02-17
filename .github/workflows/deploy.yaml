@@ -1,6 +1,12 @@
 name: Vercel Deployment
 on:
   push:
+    paths-ignore:
+      - 'README.md'
+      - '.images/**'
+      - '.gitignore'
+      - '.prettierrc'
+      - 'eslint.config.js'
     branches:
       - main
 jobs:
