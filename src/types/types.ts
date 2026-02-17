@@ -6,7 +6,8 @@ export type Translator = {
 
 export type NavItem = {
   path: string;
-  key: string;
+  skip?: boolean;
+  key?: string;
 };
 
 export type ValidationHandler = (value: string | undefined) => boolean;

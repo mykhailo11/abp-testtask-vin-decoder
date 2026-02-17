@@ -9,11 +9,20 @@
         "not-string": "Значення має бути рядком",
         "empty": "Значення не може бути порожнім",
         "length": "Значення повинно мати 17 символів",
-        "invalid-characters": "Дозволені символи: A-Z (крім I, O, Q), 0-9"
+        "invalid-characters": "Дозволені символи: A-Z (крім I, O, Q), 0-9",
+        "no-result": "За Вашим запитом нічого не знайдено"
     },
 
     "navigation": {
         "home": "Головна",
         "variables": "Змінні"
+    },
+
+    "variables": {
+        "id": "ID",
+        "name": "Назва",
+        "description": "Опис",
+        "group-name": "Категорія",
+        "data-type": "Тип Даних"
     }
 }

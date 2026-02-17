@@ -11,12 +11,21 @@
         "not-string": "Value must be string",
         "empty": "Value cannot be empty",
         "length": "Value must be 17 characters length",
-        "invalid-characters": "Allowed characters: A-Z (except I, O, Q), 0-9"
+        "invalid-characters": "Allowed characters: A-Z (except I, O, Q), 0-9",
+        "no-result": "No result was found"
     },
 
     "navigation": {
         "home": "Home",
         "variables": "Variables"
+    },
+
+    "variables": {
+        "id": "ID",
+        "name": "Name",
+        "description": "Description",
+        "group-name": "Group Name",
+        "data-type": "Data Type"
     }
 
 }

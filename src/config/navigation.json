@@ -1,10 +1,14 @@
-[
-    {
+{
+    "home": {
         "path": "/",
         "key": "home"
     },
-    {
+    "variables": {
         "path": "/variables",
         "key": "variables"
+    },
+    "variable": {
+        "path": "/variables/{{0}}",
+        "skip": true
     }
-]
+}

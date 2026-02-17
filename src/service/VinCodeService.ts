@@ -7,20 +7,40 @@ type VinCodeResponse = {
     }[];
 };
 
+type VinCodeVariableResponse = {
+    Results: {
+        DataType: string;
+        Description: string;
+        ID: number;
+        Name: string;
+        GroupName: string | undefined;
+    }[];
+};
+
 export type VinCodeData = Record<string, string>;
+export type VinCodeVariableData = {
+    dataType: string;
+    description: string;
+    id: number;
+    name: string;
+    groupName: string | undefined;
+}[];
 
 export interface VinCodeService {
-    map(data: VinCodeResponse): VinCodeData;
+    mapVinCode(data: VinCodeResponse): VinCodeData;
+    mapVinCodeVariables(data: VinCodeVariableResponse): VinCodeVariableData;
 }
 
 class VinCodeServiceImpl implements VinCodeService {
-    
     constructor() {}
 
-    public map(data: VinCodeResponse): VinCodeData {
-        console.log(this);
+    public mapVinCode(data: VinCodeResponse): VinCodeData {
         this.checkErrors(data);
         return this.transformData(data);
+    }
+
+    public mapVinCodeVariables(data: VinCodeVariableResponse): VinCodeVariableData {
+        return this.transformVariablesData(data);
     }
 
     private checkErrors(data: VinCodeResponse) {
@@ -33,11 +53,20 @@ class VinCodeServiceImpl implements VinCodeService {
     }
 
     private transformData(data: VinCodeResponse): VinCodeData {
-        return Object.fromEntries(data.Results
-            .filter(({ Value, Variable }) => Value && Value !== null && !Variable?.toLocaleLowerCase().startsWith("error"))
-            .map(({ Variable, Value }) => [Variable, Value]));
+        return Object.fromEntries(
+            data.Results.filter(({ Value, Variable }) => Value && Value !== null && !Variable?.toLocaleLowerCase().startsWith("error")).map(({ Variable, Value }) => [Variable, Value]),
+        );
     }
 
+    private transformVariablesData(data: VinCodeVariableResponse): VinCodeVariableData {
+        return data.Results.map((item) => ({
+            dataType: item.DataType,
+            description: item.Description,
+            id: item.ID,
+            name: item.Name,
+            groupName: item.GroupName,
+        }));
+    }
 }
 
 export const vinCodeService: VinCodeService = new VinCodeServiceImpl();

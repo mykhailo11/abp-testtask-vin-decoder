@@ -1,0 +1,29 @@
+.table {
+
+    overflow-x: auto;
+
+    table {
+
+        border-collapse: collapse;
+        width: 100%;
+
+        th {
+            text-align: left;
+            font-weight: inherit;
+        }
+
+        tr:not(:last-child), thead tr {
+            border-bottom: 1px solid var(--black-8);
+
+            @media (prefers-color-scheme: light) {
+                border-bottom: 1px solid var(--white-8);
+            }
+        }
+
+        tbody tr:hover {
+            background-color: gray;
+        }
+
+    }
+
+}
