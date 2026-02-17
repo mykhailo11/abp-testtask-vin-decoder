@@ -1,0 +1,22 @@
+{
+    "hello": "Hello",
+    "title": "VIN Decoder",
+
+    "vin-code": "VIN Code",
+    "search": "Search",
+    "search-history": "Search history",
+    "search-history-empty": "No searches yet",
+
+    "errors": {
+        "not-string": "Value must be string",
+        "empty": "Value cannot be empty",
+        "length": "Value must be 17 characters length",
+        "invalid-characters": "Allowed characters: A-Z (except I, O, Q), 0-9"
+    },
+
+    "navigation": {
+        "home": "Home",
+        "variables": "Variables"
+    }
+
+}

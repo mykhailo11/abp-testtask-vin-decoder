@@ -1,0 +1,31 @@
+.button, .submit {
+
+    outline: none;
+    border: none;
+    font-size: inherit;
+    color: var(--white-1);
+    background-color: var(--black-1);
+
+    box-shadow: 0 0 5px 0px var(--black-1);
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--black-1);
+        background-color: var(--white-1);
+        box-shadow: 0 0 5px 0px var(--white-1);
+    }
+
+    &:not(:disabled):hover {
+
+        background-color: var(--black-3);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: var(--white-5);
+        }
+
+    }
+
+    &:disabled {
+        opacity: 0.5;
+    }
+
+}

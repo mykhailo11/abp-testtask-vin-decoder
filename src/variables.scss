@@ -1,0 +1,25 @@
+// Display mode
+$dark-theme-background: rgb(24, 29, 33);
+$dark-theme-color: rgb(195, 195, 195);
+$min-content-threshold: 700;
+
+// Flex
+$flex-gap-multiplier: 8;
+
+// Spacing
+$padding-multiplier: 8;
+
+// Colors
+:root {
+
+    @for $n from 1 through 8 {
+
+        --black-#{$n}: rgba(calc(80 / #{$n}), calc(5 + 80 / #{$n}), calc(8 + 80 / #{$n}), 1);
+        --white-#{$n}: rgba(calc(180 + 65 / #{$n}), calc(180 + 65 / #{$n}), calc(180 + 65 / #{$n}), 1);
+        --red-#{$n}: rgba(calc(255 / #{$n}), 80, 80, 1);
+        --green-#{$n}: rgba(80, calc(255 / #{$n}), 80, 1);
+        --blue-#{$n}: rgba(80, 80, calc(255 / #{$n}), 1);
+
+    }
+
+}

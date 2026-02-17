@@ -1,0 +1,10 @@
+[
+    {
+        "path": "/",
+        "key": "home"
+    },
+    {
+        "path": "/variables",
+        "key": "variables"
+    }
+]

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+
+  color-scheme: light dark;
+  
+  * {
+
+    &:any-link {
+      color: inherit;
+    }
+
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: $dark-theme-color;
+    background-color: $dark-theme-background;
+  }
+}
+
+.block {
+  display: block;
+}
+
+.items-start {
+  align-items: start;
+}
+
+// Grid
+
+.grid {
+  display: grid;
+}
+
+// Flex
+
+@mixin flex {
+  display: flex;
+}
+
+.flex, .flex-col, .layout {
+  @include flex;
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item-grow {
+    flex-grow: 1;
+    flex-basis: auto;
+  }
+
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+// Sizing
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+@media screen and (max-width: #{$min-content-threshold}px) {
+  .layout {
+    flex-direction: column;
+  }
+}
+
+@for $n from 1 through 4 {
+
+  .fnt-color-b-#{$n} {
+    color: var(--black-#{$n * 2});
+  }
+
+  .fnt-color-w-#{$n} {
+    color: var(--white-#{$n * 2});
+  }
+
+  .fnt-#{$n} {
+    font-size: calc(#{$n}rem / 4);
+  }
+
+  .fnt-w-#{$n} {
+    font-weight: #{$n * 200};
+  }
+
+  .gap-#{$n} {
+    gap: #{$n * $flex-gap-multiplier}px
+  }
+
+  .p-#{$n} {
+    padding: #{$n * $padding-multiplier}px;
+  }
+
+  .p-x-#{$n} {
+    padding-left: #{$n * $padding-multiplier}px;
+    padding-right: #{$n * $padding-multiplier}px;
+  }
+
+  .p-y-#{$n} {
+    padding-top: #{$n * $padding-multiplier}px;
+    padding-bottom: #{$n * $padding-multiplier}px;
+  }
+
+  .border-r-#{$n} {
+    border-radius: #{5 * $n}px;
+  }
+
+  .w-#{$n} {
+    width: calc(#{$n} * 25%);
+  }
+
+  .h-#{$n} {
+    height: calc(#{$n} * 25%);
+  }
+
+  .grid-col-#{$n} {
+    grid-template-columns: repeat(#{$n}, auto);
+  }
+
+  .grid-row-#{$n} {
+    grid-template-rows: repeat(#{$n}, auto);
+  }
+
+}
+
+.error {
+  color: var(--red-2);
+  white-space: pre-wrap;
+}
+
+.tiny {
+  @extend .fnt-3;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
