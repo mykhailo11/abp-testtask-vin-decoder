@@ -1,0 +1,19 @@
+{
+    "hello": "Привіт",
+    "title": "VIN Decoder",
+    "vin-code": "VIN-код",
+    "search": "Пошук",
+    "search-history": "Історія пошуку",
+    "search-history-empty": "Пошуків ще немає",
+    "errors": {
+        "not-string": "Значення має бути рядком",
+        "empty": "Значення не може бути порожнім",
+        "length": "Значення повинно мати 17 символів",
+        "invalid-characters": "Дозволені символи: A-Z (крім I, O, Q), 0-9"
+    },
+
+    "navigation": {
+        "home": "Головна",
+        "variables": "Змінні"
+    }
+}

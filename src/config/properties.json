@@ -1,0 +1,12 @@
+{
+    "vinCodeSearchHistoryKey": "vin-code-search-history-key",
+    "vinCodeSearchHistoryLimit": 3,
+
+    "vinCodeApi": {
+        "baseUrl": "https://vpic.nhtsa.dot.gov/api",
+        "endpoints": {
+            "decodeVin": "/vehicles/decodevin/{{0}}?format=json",
+            "variablesList": "/vehicles/getvehiclevariablelist?format=json"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.home-layout {
+    display: grid;
+    width: 100%;
+    align-items: start;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: auto;
+
+    .vin-code-history {
+        grid-row-start: 2;
+    }
+
+    @media screen and (min-width: #{$min-content-threshold}px) {
+
+        grid-template-rows: auto 1fr;
+        grid-template-columns: auto;
+        max-width: 300px;
+        
+        &:has(.vin-code-info) {
+            grid-template-columns: auto 1fr;
+            max-width: 1000px;
+        }
+
+        .vin-code-info {
+            align-self: stretch;
+            justify-self: stretch;
+            grid-column: 2;
+            grid-row: 1 / 3;
+        }
+    }
+
+}

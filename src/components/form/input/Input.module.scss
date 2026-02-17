@@ -1,0 +1,26 @@
+.input {
+
+    font-size: inherit;
+
+    outline: none;
+    background-color: var(--white-2);
+    border: 1px solid var(--white-3);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: var(--black-2);
+        border: 1px solid var(--black-3);
+    }
+
+}
+
+.has-error {
+
+    .label {
+        color: var(--red-1);
+    }
+
+    .input {
+        border: 1px solid var(--red-1);
+    }
+
+}
